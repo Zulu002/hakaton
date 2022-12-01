@@ -12,6 +12,10 @@ def start(message):
     ndflbot.send_message(message.chat.id, "Привет.")
 
 
+'''Заполнение данных.'''
+@ndflbot.message_handler(content_types=["photo"])
+def photo(message):
+    pass
 
 
 '''Работа в режиме нон-стоп.'''
