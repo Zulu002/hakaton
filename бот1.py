@@ -1,5 +1,5 @@
 print("привет")
 print("sdsd")
 print("dfdf")
-for i in "сука":
+for i in "сукаs":
     print(i)
