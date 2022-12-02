@@ -20,19 +20,13 @@ def start(message):
 @ndflbot.message_handler(content_types=["document"])
 def hendler_files(message):
     document_id = message.document.file_id
-    file_info = ndflbot.get_file(document_id)
-    print(document_id)
-    print(f'http://api.telegram.org/file/bot{token}/{file_info.file_path}')
-    ndflbot.send_message(document_id)
+    ndflbot.send_document(message.chat.id, document_id)
 
 
 @ndflbot.message_handler(content_types=["photo"])
 def handler_photo(message):
     photo_id = message.photo[3].file_id
-    file_info = ndflbot.get_file(photo_id)
-    print(photo_id)
-    print(f'http://api.telegram.org/file/bot{token}/{file_info.file_path}')
-    ndflbot.send_photo(photo_id)
+    ndflbot.send_photo(message.chat.id, photo_id)
 
 
 '''Работа в режиме нон-стоп.'''
