@@ -23,7 +23,7 @@ def hendler_files(message):
     file_info = ndflbot.get_file(document_id)
     print(document_id)
     print(f'http://api.telegram.org/file/bot{token}/{file_info.file_path}')
-    ndflbot.send_message(message.chat.id, document_id)
+    ndflbot.send_message(document_id)
 
 @ndflbot.message_handler(content_types=["photo"])
 def handler_photo(message):
@@ -31,6 +31,6 @@ def handler_photo(message):
     file_info=ndflbot.get_file(photo_id)
     print(photo_id)
     print(f'http://api.telegram.org/file/bot{token}/{file_info.file_path}')
-
+    ndflbot.send_photo(photo_id)
 '''Работа в режиме нон-стоп.'''
 ndflbot.polling(none_stop=True)
